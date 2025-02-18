@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:input_validation/screens/login_screen.dart';
 import 'package:input_validation/screens/signup_screen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Validation App',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: SignupScreen(),
+      home: LoginScreen(),
     );
   }
 }

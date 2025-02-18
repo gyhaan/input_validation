@@ -14,45 +14,50 @@ class _SignupScreenState extends State<SignupScreen> {
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+  // Validates if the name field is not empty
   String? validateName(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your name';
+      return 'Please enter your name'; // Error message if name is empty
     }
-    return null;
+    return null; // Valid input
   }
 
+// Validates if the address field is not empty
   String? validateAddress(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your address';
+      return 'Please enter your address'; // Error message if address is empty
     }
-    return null;
+    return null; // Valid input
   }
 
+// Validates if the phone number is not empty and has exactly 10 digits
   String? validatePhone(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your phone number';
+      return 'Please enter your phone number'; // Error message if phone number is empty
     } else if (!RegExp(r'^\d{10}$').hasMatch(value)) {
-      return 'Enter a valid 10-digit phone number';
+      return 'Enter a valid 10-digit phone number'; // Error if not exactly 10 digits
     }
-    return null;
+    return null; // Valid input
   }
 
+// Validates if the email field is not empty and has a valid email format
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your email';
+      return 'Please enter your email'; // Error message if email is empty
     } else if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+').hasMatch(value)) {
-      return 'Please enter a valid email';
+      return 'Please enter a valid email'; // Error if email format is incorrect
     }
-    return null;
+    return null; // Valid input
   }
 
+// Validates if the password is not empty and is at least 6 characters long
   String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your password';
+      return 'Please enter your password'; // Error message if password is empty
     } else if (value.length < 6) {
-      return 'Password must be at least 6 characters';
+      return 'Password must be at least 6 characters'; // Error if password is too short
     }
-    return null;
+    return null; // Valid input
   }
 
   @override

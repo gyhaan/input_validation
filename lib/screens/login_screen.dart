@@ -12,22 +12,24 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
+// Validates if the email field is not empty and has a valid email format
   String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your email';
+      return 'Please enter your email'; // Error message if email is empty
     } else if (!RegExp(r'^[^@\s]+@[^@\s]+\.[^@\s]+').hasMatch(value)) {
-      return 'Please enter a valid email';
+      return 'Please enter a valid email'; // Error if email format is incorrect
     }
-    return null;
+    return null; // Valid input
   }
 
+// Validates if the password is not empty and is at least 6 characters long
   String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
-      return 'Please enter your password';
+      return 'Please enter your password'; // Error message if password is empty
     } else if (value.length < 6) {
-      return 'Password must be at least 6 characters';
+      return 'Password must be at least 6 characters'; // Error if password is too short
     }
-    return null;
+    return null; // Valid input
   }
 
   @override
